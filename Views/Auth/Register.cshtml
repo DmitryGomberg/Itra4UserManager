@@ -1,0 +1,36 @@
+@model UserManager.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "_AuthLayout";
+}
+
+<h4 class="fw-semibold mb-4">Создать аккаунт</h4>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+@if (ViewBag.Success != null)
+{
+    <div class="alert alert-success">@ViewBag.Success</div>
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Имя</label>
+        <input asp-for="Name" class="form-control" placeholder="Ваше имя" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input asp-for="Email" type="email" class="form-control" placeholder="you@example.com" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Пароль</label>
+        <input asp-for="Password" type="password" class="form-control" placeholder="Любой пароль" />
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
+</form>
+
+<div class="mt-3 text-center">
+    <a href="/Auth/Login">Уже есть аккаунт? Войти</a>
+</div>

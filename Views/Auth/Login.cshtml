@@ -1,0 +1,28 @@
+@model UserManager.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_AuthLayout";
+}
+
+<h4 class="fw-semibold mb-4">Войти в UserManager</h4>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input asp-for="Email" type="email" class="form-control" placeholder="you@example.com" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Пароль</label>
+        <input asp-for="Password" type="password" class="form-control" placeholder="Пароль" />
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Войти</button>
+</form>
+
+<div class="mt-3 text-center">
+    <a href="/Auth/Register">Не имеете аккаунта? Зарегистрироваться</a>
+</div>

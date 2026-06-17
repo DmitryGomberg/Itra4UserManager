@@ -17,4 +17,6 @@ public class User
   public DateTime? LastLoginAt { get; set; }
 
   public string? VerificationToken { get; set; }
+
+  public string? PreviousStatus { get; set; }
 }
